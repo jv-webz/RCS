@@ -145,7 +145,21 @@
         <h3 class="text-3xl font-bold mb-12">What Our Clients Say</h3>
         <div id="testimonial-slider" class="relative fade-in">
           <div class="text-xl italic mb-4" id="testimonial-text">“Rose Cleaning transformed my home! So professional and thorough.”</div>
-          <div class="text-rose font-semibold" id="testimonial-author">— Emili .K</div>
+          <div class="text-rose font-semibold flex items-center justify-center gap-2" id="testimonial-author">
+            <span>— Emili .K</span>
+            <img src="start rating.png" alt="5-star rating" class="h-5 w-auto inline-block" />
+            </div>
+          <div class="absolute top-1/2 left-0 transform -translate-y-1/2">
+            <button id="prev-testimonial" class="bg-white text-rose p-2 rounded-full shadow hover:bg-roseLight transition">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          </div>
+          <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+            <button id="next-testimonial" class="bg-white text-rose p-2 rounded-full shadow hover:bg-roseLight transition">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>    
+
         </div>
       </div>
     </section>
@@ -212,16 +226,22 @@
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
       // Testimonial Slider
-      const testimonials = [
+    const testimonials = [
         { text: "Rose Cleaning transformed my home! So professional and thorough.", author: "— Emili K." },
-        { text: "Their team was punctual, friendly, and did an amazing job.", author: "— Chiamaka M." },
-        { text: "Highly recommend for office cleaning! We’ve seen a huge improvement.", author: "— Annabel O." }
-      ];
+        { text: "Their team was punctual, friendly, and did an amazing job.", author: "— Amaka M." },
+        { text: "Highly recommend for office cleaning! We’ve seen a huge improvement.", author: "— Annabel O." },
+        { text: "Everything was spotless. They even cleaned places I didn’t expect!", author: "— Juliet A." },
+        { text: "I’m blown away by their attention to detail. Will book again!", author: "— Philip F ." },
+        { text: "Professional, friendly, and very affordable. 10/10 service!", author: "— Stephens Jv O." },
+        { text: "From booking to final sweep, the service was seamless and reliable.", author: "— Judith T." },
+        { text: "The team was fast and efficient. My apartment has never looked better!", author: "— Precious Fx." }
+        ];
       let index = 0;
       setInterval(() => {
         index = (index + 1) % testimonials.length;
         document.getElementById('testimonial-text').textContent = `“${testimonials[index].text}”`;
-        document.getElementById('testimonial-author').textContent = testimonials[index].author;
+        document.getElementById('testimonial-author').innerHTML = `<span>${testimonials[index].author}</span> <img src="start rating.png" alt="Rating" class="h-5 w-auto inline-block ml-2" />`;
+
       }, 5000);
 
       // Contact Form Validation
