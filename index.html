@@ -40,28 +40,38 @@
   </head>
   <body class="bg-white text-gray-800 font-sans">
     <!-- Header -->
-   <header class="sticky top-0 bg-white z-50 shadow-md">
-  <div class="w-full flex justify-between items-center px-4 py-3">
-    <!-- Left-aligned logo -->
-    <a href="#home" class="flex items-center gap-2">
-      <img src="rose logo1.png" alt="Rose Logo" class="w-12 h-12 object-cover bg-white rounded shadow p-1" />
-      <span class="text-2xl font-bold text-rose">RozyP CS</span>
-    </a>
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-md">
+    <div class="w-full flex justify-between items-center px-4 py-3">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2">
+        <img src="rose logo1.png" alt="Rose Logo" class="w-12 h-12 object-cover bg-white rounded shadow p-1" />
+        <span class="text-2xl font-bold text-rose">RozyP CS</span>
+        </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-6">
-      <a href="#home" class="hover:text-rose font-medium">Home</a>
-      <a href="#services" class="hover:text-rose font-medium">Services</a>
-      <a href="#about" class="hover:text-rose font-medium">About</a>
-      <a href="#contact" class="hover:text-rose font-medium">Contact</a>
-    </nav>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-6">
+        <a href="#home" class="hover:text-rose font-medium">Home</a>
+        <a href="#services" class="hover:text-rose font-medium">Services</a>
+        <a href="#about" class="hover:text-rose font-medium">About</a>
+        <a href="#contact" class="hover:text-rose font-medium">Contact</a>
+        </nav>
 
-    <!-- Hamburger Button -->
-    <button class="md:hidden" id="menu-toggle">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </div>
- </header>
+        <!-- Hamburger Button -->
+        <button class="md:hidden" id="menu-toggle">
+        <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- ✅ Mobile Menu (Fix applied) -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white shadow">
+        <a href="#home" class="block py-2 border-b mobile-link">Home</a>
+        <a href="#services" class="block py-2 border-b mobile-link">Services</a>
+        <a href="#about" class="block py-2 border-b mobile-link">About</a>
+        <a href="#contact" class="block py-2 mobile-link">Contact</a>
+    </div>
+    </header>
+
 
     <!-- Hero Section -->
     <section id="home" class="bg-roseLight py-20 text-center">
@@ -204,7 +214,7 @@
       // Testimonial Slider
       const testimonials = [
         { text: "Rose Cleaning transformed my home! So professional and thorough.", author: "— Emili K." },
-        { text: "Their team was punctual, friendly, and did an amazing job.", author: "— Amaka M." },
+        { text: "Their team was punctual, friendly, and did an amazing job.", author: "— Chiamaka M." },
         { text: "Highly recommend for office cleaning! We’ve seen a huge improvement.", author: "— Annabel O." }
       ];
       let index = 0;
